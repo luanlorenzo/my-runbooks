@@ -5,6 +5,7 @@ TABLE_NAME='{{ .tableName | type "select" | description "the name of the table" 
 KEY_CONDITION_EXPR='{{ .keyExpression | description "The condition that specifies the key values for items to beretrieved by the Query action" | required "keyExpression is required" }}'
 EXPR_ATTRIBUTE_NAMES='{{ .exprAttributeNames | description "One or more substitution tokens for attribute names in an expression" | required "exprAttributeNames is required" }}'
 EXPR_ATTRIBUTE_VALUES='{{ .exprAttributeValues | description " One or more values that can be substituted in an expression" | required "exprAttributeValues is required" }}'
+FILE='{{ .tableName | type "file" | description "some file" }}'
 
 aws dynamodb query \
     --no-cli-pager \
